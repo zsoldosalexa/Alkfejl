@@ -43,3 +43,17 @@
  - DELETE
    - lesson/delete/id - csoportos óra törlése
    - lesson/removelesson/id - lejelentkezés a csoportos óráról
+# Fejlesztői környezet
+## Felhasznált eszözök
+  - Github verziókezelő
+  - NetBeans IDE
+  - SpringBoot Java keretrendszer
+  - H2 adatbázis kezelő
+## Projekt indítása
+### Backend
+  - Git telepítése
+  - Projekt klónozása:https://github.com/iamzolii/Alkfejl
+  - A használt fejlesztői környezetbe való importálás után a Spring alkalmazás indítása lehetséges:
+     - ha elérhető Maven plug-in, akkor a run goal futtatásával
+     - parancssorból: mvn spring-boot:run 
+  
