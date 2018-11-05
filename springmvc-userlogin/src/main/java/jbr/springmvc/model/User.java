@@ -1,7 +1,7 @@
 package jbr.springmvc.model;
 
 public class User {
-
+  private boolean trainer=false;
   private String username;
   private String password;
   private String firstname;
@@ -9,16 +9,32 @@ public class User {
   private String email;
   private String address;
   private int phone;
+  private int memberShip = 0;
 
+  public int getMemberShip() {
+    return memberShip;
+  }
+
+  public void setMemberShip(int memberShip) {
+    this.memberShip = memberShip;
+  }
+  
   public String getUsername() {
     return username;
   }
-
+  
   public void setUsername(String username) {
-    System.out.println("username: " + username);
     this.username = username;
   }
 
+  public boolean isTrainer() {
+    return trainer;
+  }
+
+  public void setTrainer(boolean trainer) {
+    this.trainer = trainer;
+  }
+  
   public String getPassword() {
     return password;
   }
@@ -32,7 +48,6 @@ public class User {
   }
 
   public void setFirstname(String firstname) {
-    System.out.println("firstname: " + firstname);
     this.firstname = firstname;
   }
 

@@ -8,5 +8,8 @@ CREATE TABLE `myusers`.`users` (
   `firstname` VARCHAR(45) NOT NULL,
   `lastname` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
+  `address` VARCHAR(45) NULL,
   `phone` INT NULL,
+  `trainer` BOOLEAN NOT NULL,
+  `membership` INT NOT NULL,
   PRIMARY KEY (`username`));

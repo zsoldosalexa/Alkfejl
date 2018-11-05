@@ -1,9 +1,0 @@
-hu\elte\Secure\Controller\GuestController.class
-hu\elte\WashingMachine\controllers\WashingMachineController.class
-hu\elte\WashingMachine\WashingMachineApplication.class
-hu\elte\WashingMachine\entities\WashingMachine.class
-hu\elte\Secure\Config\BasicAuthenticationPoint.class
-hu\elte\Secure\Config\AppConfig.class
-hu\elte\Secure\Controller\AdminController.class
-hu\elte\Secure\Controller\HelloMessage.class
-hu\elte\WashingMachine\repositories\WashingMachineRepository.class

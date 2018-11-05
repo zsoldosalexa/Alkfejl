@@ -1,7 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -42,12 +42,15 @@
 				<td><form:label path="phone">Phone</form:label></td>
 				<td><form:input path="phone" name="phone" id="phone" /></td>
 			</tr>
+                        <tr>
+                            <td> <p>Check if you are a trainer</p> </td>
+                            <td><form:checkbox path="trainer"></form:checkbox> </td>
+                        </tr>
 
 			<tr>
 				<td></td>
 				<td><form:button id="register" name="register">Register</form:button></td>
 			</tr>
-			<tr></tr>
 			<tr>
 				<td></td>
 				<td><a href="home.jsp">Home</a></td>

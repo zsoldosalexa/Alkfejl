@@ -11,6 +11,10 @@ public class UserServiceImpl implements UserService {
   @Autowired
   public UserDao userDao;
 
+  public void boughtMemberShip(User user,int memberShip) {
+      userDao.boughtMemberShip(user, memberShip);
+  }
+  
   public void register(User user) {
     userDao.register(user);
   }

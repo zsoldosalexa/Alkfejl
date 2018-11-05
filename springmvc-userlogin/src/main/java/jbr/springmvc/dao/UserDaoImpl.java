@@ -24,8 +24,12 @@ public class UserDaoImpl implements UserDao {
   public void register(User user) {
 
 
-    jdbcTemplate.update("insert into users values (?,?,?,?,?,?,?)" , user.getUsername(), user.getPassword(), user.getFirstname(),
-        user.getLastname(), user.getEmail(), user.getAddress(), user.getPhone());
+    jdbcTemplate.update("insert into users values (?,?,?,?,?,?,?,?,?)" , user.getUsername(), user.getPassword(), user.getFirstname(),
+        user.getLastname(), user.getEmail(), user.getAddress(), user.getPhone(), user.isTrainer(),user.getMemberShip());
+  }
+  
+  public void boughtMemberShip(User user,int memberShip) {
+      jdbcTemplate.update("UPDATE USERS SET membership = "+memberShip);
   }
   
 
@@ -53,7 +57,7 @@ class UserMapper implements RowMapper<User> {
     user.setEmail(rs.getString("email"));
     user.setAddress(rs.getString("address"));
     user.setPhone(rs.getInt("phone"));
-
+    user.setTrainer(rs.getBoolean("trainer"));
     return user;
   }
 }
