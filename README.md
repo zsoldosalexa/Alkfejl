@@ -9,7 +9,6 @@
     -	Az órákra hely foglalása
     - Kérdések feltétele
 4.	Bejelentkezett oktatóknak:
-    -	Vendégek listázása
     -	Órák listázása
     -	Órák meghirdetése
     - Órák törlése
