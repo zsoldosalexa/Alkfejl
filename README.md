@@ -30,18 +30,14 @@
    - POST
      - login
      - register
-     - guest/addlesson/id - felejelentkezés órára
-     - lesson/new - új csoportos óra meghirdetése
+     - reserveprocess - felejelentkezés órára
+     - newlesson - új csoportos óra meghirdetése
   - GET
-    - lesson/all - meghirdetett csoportos órák listázása
-    - lesson/guestid - vendégek feljelentkezett óráinak listázása
-    - guest/all - vendégek listázása
-    - instructor/all - oktatók listázása
+    - lessons - meghirdetett csoportos órák listázása
  - PUT
-   - lesson/modify/id - csoportos óra szerkesztése
+   - modifylesson - csoportos óra szerkesztése
  - DELETE
-   - lesson/delete/id - csoportos óra törlése
-   - lesson/removelesson/id - lejelentkezés a csoportos óráról
+   - deletelesson - csoportos óra törlése
 # Fejlesztői környezet
 ## Felhasznált eszözök
   - Github verziókezelő
@@ -55,4 +51,28 @@
   - A használt fejlesztői környezetbe való importálás után a Spring alkalmazás indítása lehetséges:
      - ha elérhető Maven plug-in, akkor a run goal futtatásával
      - parancssorból: mvn spring-boot:run 
-  
+# Alkalmazott könyvtárstruktúra
+   - controller
+      - LessonController.java
+      - LoginController.java
+      - MemberShipController.java
+      - RegistrationController.java
+   - dao
+      - LessonDao.java
+      - LessonImpl.java
+      - UserDao.java
+      - UseImpl.java
+   - model
+      - Lesson.java
+      - Lessons.java
+      - Login.java
+      - Membership.java
+      - Privileges.java
+      - User.java
+   - service
+      - LessonService.java
+      - LessonServiceImpl.java
+      - UserService.java
+      - UserServiceImpl.java
+   - UserServiceTest.java
+   
