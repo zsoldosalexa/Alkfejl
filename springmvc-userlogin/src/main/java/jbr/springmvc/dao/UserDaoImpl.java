@@ -1,17 +1,25 @@
 package jbr.springmvc.dao;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.sql.DataSource;
+import jbr.springmvc.model.Lesson;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import jbr.springmvc.model.Login;
+import jbr.springmvc.model.Membership;
 import jbr.springmvc.model.User;
+import org.springframework.web.servlet.ModelAndView;
 
 public class UserDaoImpl implements UserDao {
 
@@ -22,14 +30,33 @@ public class UserDaoImpl implements UserDao {
   JdbcTemplate jdbcTemplate;
 
   public void register(User user) {
-
-
     jdbcTemplate.update("insert into users values (?,?,?,?,?,?,?,?,?)" , user.getUsername(), user.getPassword(), user.getFirstname(),
-        user.getLastname(), user.getEmail(), user.getAddress(), user.getPhone(), user.isTrainer(),user.getMemberShip());
+        user.getLastname(), user.getEmail(), user.getAddress(), user.getPhone(), user.isTrainer(),user.getMembership());
   }
   
-  public void boughtMemberShip(User user,int memberShip) {
-      jdbcTemplate.update("UPDATE USERS SET membership = "+memberShip);
+  public ArrayList<String> getAllUsername() throws ClassNotFoundException, SQLException {
+    Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/myusers","root","root");
+    Statement stm;
+    stm = conn.createStatement();
+    String sql = "Select * From users";
+    ResultSet rst;
+    rst = stm.executeQuery(sql);
+    ArrayList<String> customerList = new ArrayList<String>();
+    while (rst.next()) {
+        customerList.add(rst.getString("username"));
+    }
+    return customerList;
+  }
+  
+  
+  
+  
+  public void reservePlace(Lesson lesson) {
+      jdbcTemplate.update("UPDATE LESSONS SET availableplaces=availableplaces-1 where name= '"+lesson.getName()+"'");
+  }
+  
+  public void boughtMemberShip(Membership membership) {
+      jdbcTemplate.update("UPDATE USERS SET membership = membership+'"+membership.getMonths()+"' WHERE username='"+ membership.getUsername()+"'");
   }
   
 

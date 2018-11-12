@@ -8,15 +8,21 @@
         <title>Buy membership</title>
     </head>
     <body>
-        
-        <form:form id="membershipForm" modelAttribute="user" action="buyprocess"
+                <h1 align="center">Type the number of months of membership you would like to buy</h1>
+
+        <form:form id="membershipForm" modelAttribute="membership"  action="buyprocess"
 		method="post">
-        <h1 align="center">Type the number of months of membership you would like to buy</h1>
         <table>
             <tr>
                 <td> <p>1 Month - 9000 HUF. If you buy more than 3 months you will get 500 G of protein free!</p> </td>
-                <td><form:label path="memberShip">Membership in months</form:label> </td>
-                <td><form:input path="memberShip" id="membership" /></td>
+            </tr>
+            </tr>
+                <td><form:label path="username">Username</form:label> </td> 
+                <td><form:input path="username" name="username" id="username" /></td>
+            </tr>
+            <tr>                
+                <td><form:label path="months">Membership in months</form:label> </td> 
+                <td><form:input path="months" name="months" id="months" /></td>
             </tr>
             <tr>
 		<td></td>

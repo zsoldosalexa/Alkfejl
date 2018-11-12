@@ -9,14 +9,16 @@ public class User {
   private String email;
   private String address;
   private int phone;
-  private int memberShip = 0;
+  private int membership = 0;
+  
+  
 
-  public int getMemberShip() {
-    return memberShip;
+  public int getMembership() {
+    return membership;
   }
 
-  public void setMemberShip(int memberShip) {
-    this.memberShip = memberShip;
+  public void setMembership(int membership) {
+    this.membership = membership;
   }
   
   public String getUsername() {

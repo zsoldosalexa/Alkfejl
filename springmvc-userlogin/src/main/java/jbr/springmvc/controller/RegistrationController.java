@@ -29,9 +29,14 @@ public class RegistrationController {
   @RequestMapping(value = "/registerProcess", method = RequestMethod.POST)
   public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response,
       @ModelAttribute("user") User user) {
-
-    userService.register(user);
-
+      if((user.getFirstname().isEmpty()) || (user.getLastname().isEmpty()) || (user.getUsername().isEmpty()) || (user.getPassword().isEmpty()) ) {
+          ModelAndView mav = new ModelAndView("register");
+          mav.addObject("message","please fill the brackets");
+          return mav;
+      }
+      else {
+        userService.register(user);
+      }
     return new ModelAndView("registration-success", "firstname", user.getFirstname());
   }
 }

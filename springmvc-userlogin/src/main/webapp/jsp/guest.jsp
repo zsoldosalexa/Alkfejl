@@ -11,8 +11,8 @@
         <h1 align="center">Greetings ${firstname}</h1>
         <table>
 		<tr>
-                    <td><a href="jsp/membership.jsp"> Buy membership</a></td>
-                    <td><a href="jsp/lessons.jsp"> Lessons </a> </td>
+                    <td><a href="membership"> Buy membership</a></td>
+                    <td><a href="lessons"> Lessons </a> </td>
                     <td> <a href="jsp/ask.jsp"> Ask something </a></td>
 		</tr>
 		<tr>
